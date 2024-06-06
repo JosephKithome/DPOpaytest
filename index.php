@@ -23,7 +23,7 @@ class Candidate {
 // Setter Methods
   function set_first_name($first_name) {
     
-    echo htmlspecialchars($first_name(), ENT_QUOTES, 'UTF-8');
+//    echo htmlspecialchars($first_name(), ENT_QUOTES, 'UTF-8');
 
     $this->first_name = $first_name;
   }
