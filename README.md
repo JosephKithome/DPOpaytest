@@ -404,18 +404,20 @@ https://github.com/JosephKithome/DPOpaytest/blob/master/SumEvenNumbers.php
  9. Create a PHP script that reads a text file, counts the number of words in the file, and displays the result. Ensure that your code handles file open and read errors gracefully.
 https://github.com/JosephKithome/DPOpaytest/blob/master/countWordsInFile.php
 10. Using PHP, make a GET request to a sample REST API (e.g., JSONPlaceholder) to retrieve a list of users. Parse the JSON response and display the user's name and email address.
-https://github.com/JosephKithome/DPOpaytest/blob/master/displayUsers.php
+ 	
+ - https://github.com/JosephKithome/DPOpaytest/blob/master/displayUsers.php
+   
 11. Describe how you would design an auto-scaling setup in AWS to handle a PHP application with fluctuating traffic. What services and features would you use, and provide a high-level architecture diagram if possible.
 Prerequisite:
-AWS Account: Have an active AWS account that allows you to access and manage AWS services.
-Have a basic understanding of Amazon EC2 (Elastic Compute Cloud) instances, including how to launch and manage them.
-Have knowledge about AWS Availability Zones, which are distinct physical locations within an AWS Region designed to provide high availability and fault tolerance.
+ - AWS Account: Have an active AWS account that allows you to access and manage AWS services.
+ - Have a basic understanding of Amazon EC2 (Elastic Compute Cloud) instances, including how to launch and manage them.
+ - Have knowledge about AWS Availability Zones, which are distinct physical locations within an AWS Region designed to provide high availability and fault tolerance.
 Steps:
-Step 1: Sign into the AWS console
-Step 2: Search and select EC2
-Step 3: Create an Auto Scaling Group 
-Step 5: Create a Launch Template
-Step 6: Customize the Launch Template
+ - Step 1: Sign into the AWS console
+ - Step 2: Search and select EC2
+ - Step 3: Create an Auto Scaling Group 
+ - Step 5: Create a Launch Template
+ - Step 6: Customize the Launch Template
 -	Select an AMI image for your EC2 instance and choose an instance type. Create a security group to control inbound and outbound traffic.
 Step 7: Return to Auto Scaling Group Creation
 -	Go back to the previous tab and click the refresh button. Select the launch template you just created. Then click next.
@@ -432,24 +434,27 @@ In this step, we include tags to our Auto Scaling Group for better organization 
 Step 13: Review and Confirm:
 Before proceeding, please take a moment to review the options you have selected in the previous steps and ensure their accuracy. Once you have confirmed everything, click the "Create Auto Scaling Group" button to finalize the process.
 
-Step 14: Testing the Setup
-Navigate back to the EC2 dashboard.
-Step 15: Testing the Load Balancer
-Access the Load Balancer section from the left-hand side menu. Copy the Load Balancer DNS and test it in your browser
+- Step 14: Testing the Setup
+   Navigate back to the EC2 dashboard.
+- Step 15: Testing the Load Balancer
+   -Access the Load Balancer section from the left-hand side menu. Copy the Load Balancer DNS and test it in your browser
 
 
-Advanced questions:
-12. Write a PHP script that performs asynchronous processing using a message queue system like RabbitMQ or Redis. The script should receive a task (e.g., an email sending request) and process it in the background without blocking the main application. Demonstrate how you would set up the message queue and create a worker script to handle the tasks.
-1. Set up RabbitMQ
-Ensure RabbitMQ is installed and running. You can download RabbitMQ from the official site and follow the installation instructions for your operating system.
-2. Install Composer
-3. Navigate to your project directory and install php-amqplib using Composer
+# Advanced questions:
+
+## 12. Write a PHP script that performs asynchronous processing using a message queue system like RabbitMQ or Redis. The script should receive a task (e.g., an email sending request) and process it in the background without blocking the main application. Demonstrate how you would set up the message queue and create a worker script to handle the tasks.
+ - 1. Set up RabbitMQ
+     - Ensure RabbitMQ is installed and running. You can download RabbitMQ from the official site and follow the installation instructions for your operating system.
+ - 2. Install Composer
+ - 3. Navigate to your project directory and install php-amqplib using Composer
  - Run composer require php-amqplib/php-amqplib
 
 
 
-4. Create a Producer Script;
-https://github.com/JosephKithome/DPOpaytest/blob/master/advanced/producer.php
+- 4. Create a Producer Script;
+  5. 
+- https://github.com/JosephKithome/DPOpaytest/blob/master/advanced/producer.php
+
 ```
 <?php
 require_once  '../vendor/autoload.php';
@@ -489,8 +494,8 @@ $producer->sendEmailRequest($emailData);
 
 ```
 
-6. Create a consumer(Worker) script
-https://github.com/JosephKithome/DPOpaytest/blob/master/advanced/consumer.php
+- 6. Create a consumer(Worker) script
+   - https://github.com/JosephKithome/DPOpaytest/blob/master/advanced/consumer.php
 ```
 <?php
 require_once '../vendor/autoload.php';
@@ -546,32 +551,36 @@ $consumer = new EmailConsumer();
 $consumer->processEmails();
 echo "Finished processing all messages.\n";
 ?>
-``
+```
 
-8. Run the following scripts to test:
+###8. Run the following scripts to test:
        -      php producer.php
        -      php consumer.php
 
-13.Write a PHP script that serializes a large data structure (e.g., an array or object), compresses it, saves it to a file, and then unserializes and decompresses the data from the file. You can use standard PHP functions for serialization and a compression library like zlib to achieve this.
+## 13.Write a PHP script that serializes a large data structure (e.g., an array or object), compresses it, saves it to a file, and then unserializes and decompresses the data from the file. You can use standard PHP functions for serialization and a compression library like zlib to achieve this.
 https://github.com/JosephKithome/DPOpaytest/blob/master/compressor.php
 DataProcessor Class:
 The class DataProcessor is created to handle data processing and retrieval.
 The constructor accepts the file path where the compressed data will be saved.
-processData Method:
-	Creates a large data structure.
-	Serializes and compresses the data.
-	Saves the compressed data to a file.
-	Includes error handling with try-catch blocks.
-retrieveData Method:
-	Reads the compressed data from the file.
-	Decompresses and unserializes the data.
-	Prints a sample of the data to verify.
-	Includes error handling with try-catch blocks.
+ - processData Method:
+-	Creates a large data structure.
+-	Serializes and compresses the data.
+-	Saves the compressed data to a file.
+-	Includes error handling with try-catch blocks.
+- retrieveData Method:
+-	Reads the compressed data from the file.
+-	Decompresses and unserializes the data.
+-	Prints a sample of the data to verify.
+-	Includes error handling with try-catch blocks.
 Usage Example:
 An instance of DataProcessor is created with the specified file path.
 processData and retrieveData methods are called to demonstrate the complete process.
 
 
-14. Write a PHP script that integrates with a REST API protected by OAuth 2.0 authentication. Implement the OAuth 2.0 authorization code flow to obtain an access token and use that token to make authenticated requests to the API. Provide a code example that demonstrates the complete authentication and data retrieval process. https://github.com/JosephKithome/DPOpaytest/tree/master/oauth 
-15. Develop a PHP application that connects to an MS SQL Server database, retrieves data from multiple tables, performs a complex SQL query to join and aggregate data, and then returns the results as JSON. Demonstrate proper error handling and security measures in your code. 
-The whole implementation of the query can be found here; https://github.com/JosephKithome/DPOpaytest/tree/master/advancedSQL
+## 14. Write a PHP script that integrates with a REST API protected by OAuth 2.0 authentication. Implement the OAuth 2.0 authorization code flow to obtain an access token and use that token to make authenticated requests to the API. Provide a code example that demonstrates the complete authentication and data retrieval process. 
+The implementation can be fouund in the link below.
+ - https://github.com/JosephKithome/DPOpaytest/tree/master/oauth 
+
+# 15. Develop a PHP application that connects to an MS SQL Server database, retrieves data from multiple tables, performs a complex SQL query to join and aggregate data, and then returns the results as JSON. Demonstrate proper error handling and security measures in your code. 
+The whole implementation of the query can be found here; 
+  - https://github.com/JosephKithome/DPOpaytest/tree/master/advancedSQL
