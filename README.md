@@ -563,15 +563,15 @@ DataProcessor Class:
 The class DataProcessor is created to handle data processing and retrieval.
 The constructor accepts the file path where the compressed data will be saved.
  - processData Method:
--	Creates a large data structure.
--	Serializes and compresses the data.
--	Saves the compressed data to a file.
--	Includes error handling with try-catch blocks.
+     -	Creates a large data structure.
+     -	Serializes and compresses the data.
+     -	Saves the compressed data to a file.
+     -	Includes error handling with try-catch blocks.
 - retrieveData Method:
--	Reads the compressed data from the file.
--	Decompresses and unserializes the data.
--	Prints a sample of the data to verify.
--	Includes error handling with try-catch blocks.
+    -	Reads the compressed data from the file.
+    -	Decompresses and unserializes the data.
+    -	Prints a sample of the data to verify.
+    -	Includes error handling with try-catch blocks.
 Usage Example:
 An instance of DataProcessor is created with the specified file path.
 processData and retrieveData methods are called to demonstrate the complete process.
