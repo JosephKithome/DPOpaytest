@@ -25,8 +25,8 @@ Object: It is a basic unit of Object-Oriented Programming and represents the rea
 
 
 ## Principles of OOP:
-Encapsulation: Encapsulation is defined as the wrapping up of data under a single unit. It is the mechanism that binds together code and the data it manipulates. In Encapsulation, the variables or data of a class are hidden from any other class and can be accessed only through any member function of their class in which they are declared. As in encapsulation, the data in a class is hidden from other classes, so it is also known as data-hiding.
-Inheritance: Inheritance is an important pillar of OOP (Object-Oriented Programming). The capability of a class to derive properties and characteristics from another class is called Inheritance. When we write a class, we inherit properties from other classes. So when we create a class, we do not need to write all the properties and functions again and again, as these can be inherited from another class that possesses it. Inheritance allows the user to reuse the code whenever possible and reduce its redundancy.
+- Encapsulation: Encapsulation is defined as the wrapping up of data under a single unit. It is the mechanism that binds together code and the data it manipulates. In Encapsulation, the variables or data of a class are hidden from any other class and can be accessed only through any member function of their class in which they are declared. As in encapsulation, the data in a class is hidden from other classes, so it is also known as data-hiding.
+- Inheritance: Inheritance is an important pillar of OOP (Object-Oriented Programming). The capability of a class to derive properties and characteristics from another class is called Inheritance. When we write a class, we inherit properties from other classes. So when we create a class, we do not need to write all the properties and functions again and again, as these can be inherited from another class that possesses it. Inheritance allows the user to reuse the code whenever possible and reduce its redundancy.
 - Polymorphism:  The word polymorphism means having many forms. In simple words, we can define polymorphism as the ability of a message to be displayed in more than one form. For example, a person at the same time can have different characteristics. Like a man at the same time is a father, a husband, an employee. So the same person possess different behavior in different situations. 
 - Abstraction: Data abstraction is one of the most essential and important features of object-oriented programming. Data abstraction refers to providing only essential information about the data to the outside world, hiding the background details or implementation. Consider a real-life example of a man driving a car. The man only knows that pressing the accelerators will increase the speed of the car or applying brakes will stop the car, but he does not know about how on pressing the accelerator the speed is increasing, he does not know about the inner mechanism of the car or the implementation of the accelerator, brakes, etc. in the car. This is what abstraction is.
 Defining a Class and Creating Objects:
@@ -89,7 +89,7 @@ echo "<br>";
 // josephkithome.jmk@gmail.com
 // 254717064174
 ```
- 3. Explain the purpose of exception handling in PHP. How do you catch and handle exceptions in your code? Provide an example of how you would use try-catch blocks.
+ ## 3. Explain the purpose of exception handling in PHP. How do you catch and handle exceptions in your code? Provide an example of how you would use try-catch blocks.
 Purpose:
 Exception handling allows you to manage errors gracefully, ensuring the program can handle unexpected conditions without crashing.
 Try-Catch Example:
@@ -166,7 +166,7 @@ try {
 }
  ?>
 ```
-4. Discuss different methods for connecting to a database in PHP. Describe the differences between MySQLi and PDO. Provide an example of how to perform a basic database query using one of these methods.
+## 4. Discuss different methods for connecting to a database in PHP. Describe the differences between MySQLi and PDO. Provide an example of how to perform a basic database query using one of these methods.
 MySQLi vs. PDO:
 MySQLi: MySQL Improved extension, supports procedural and object-oriented programming and only works with MySQL databases.
 PDO:  PHP Data Objects, supports multiple databases (MySQL, PostgreSQL, SQLite, etc.), only object-oriented and if you have to switch a database you only need to update the connection string.
@@ -207,7 +207,7 @@ try {
 
 
 
-5. How would you protect a PHP application from common security vulnerabilities such as SQL injection and cross-site scripting (XSS)? Provide code examples or best practices for mitigating these threats.
+## 5. How would you protect a PHP application from common security vulnerabilities such as SQL injection and cross-site scripting (XSS)? Provide code examples or best practices for mitigating these threats.
 -Use prepared statements with parameterized queries to prevent SQL Injection.
 https://github.com/JosephKithome/DPOpaytest/blob/master/Preparedstmt.php
 ``` <?php
@@ -259,20 +259,24 @@ https://github.com/JosephKithome/DPOpaytest/blob/master/index.php
 
 
 
-6. Compare and contrast the major cloud service providers (e.g., AWS, Azure, Google Cloud). Describe the advantages and use cases for each. If you were to deploy a PHP application, which cloud provider would you choose, and why?
-AWS	AZURE 	GCP
-Advantages: Extensive services, global reach, strong community and support.
-Use Cases: Scalable web applications, big data analytics, serverless computing.
-	Advantages: Strong integration with Microsoft products, hybrid cloud capabilities.
-Use Cases: Enterprise applications, IoT solutions, AI and machine learning.
-	Advantages: Strong in data analytics and machine learning, competitive pricing.
-Use Cases: Data processing, containerized applications, AI-driven projects.
+## 6. Compare and contrast the major cloud service providers (e.g., AWS, Azure, Google Cloud). Describe the advantages and use cases for each. If you were to deploy a PHP application, which cloud provider would you choose, and why?
+- AWS	 	
+    - Advantages: Extensive services, global reach, strong community and support.
+    - Use Cases: Scalable web applications, big data analytics, serverless computing.
+	
+- AZURE
+   - Advantages: Strong integration with Microsoft products, hybrid cloud capabilities.
+   - Use Cases: Enterprise applications, IoT solutions, AI and machine learning.
+  
+- GCP
+   - Advantages: Strong in data analytics and machine learning, competitive pricing.
+   - Use Cases: Data processing, containerized applications, AI-driven projects.
 
 
-Choice for PHP Application Deployment:
-I would choose AWS Due to its extensive services, global infrastructure, and mature ecosystem.
+### Choice for PHP Application Deployment:
+     - I would choose AWS Due to its extensive services, global infrastructure, and mature ecosystem.
 
- 7. Explain the concept of Infrastructure as Code and its importance in cloud infrastructure management. Provide an example of how you would define infrastructure components using a tool like Terraform or AWS CloudFormation.
+##  7. Explain the concept of Infrastructure as Code and its importance in cloud infrastructure management. Provide an example of how you would define infrastructure components using a tool like Terraform or AWS CloudFormation.
 Importance:
 Infrastructure as code (IaC) is the ability to provision and support your computing infrastructure using code instead of manual processes and settings.
 Example using Terraform
@@ -313,7 +317,7 @@ resource "aws_budgets_budget" "like-and-subscribe" {
  }
 ```
 
-8. Write a PHP function that takes an array of integers and returns the sum of all even numbers in the array.
+## 8. Write a PHP function that takes an array of integers and returns the sum of all even numbers in the array.
 https://github.com/JosephKithome/DPOpaytest/blob/master/SumEvenNumbers.php
 ``` <?php
 class Calculator {
@@ -347,7 +351,7 @@ if ($result !== null) {
 ```
 
 
- 9. Create a PHP script that reads a text file, counts the number of words in the file, and displays the result. Ensure that your code handles file open and read errors gracefully.
+##  9. Create a PHP script that reads a text file, counts the number of words in the file, and displays the result. Ensure that your code handles file open and read errors gracefully.
 https://github.com/JosephKithome/DPOpaytest/blob/master/countWordsInFile.php
 ```
 <?php
@@ -376,19 +380,22 @@ echo $counter->countWordsInFile('words.txt');
 ```
 
 
-10.Using PHP, make a GET request to a sample REST API (e.g., JSONPlaceholder) to retrieve a list of users. Parse the JSON response and display the user's name and email address.
-https://github.com/JosephKithome/DPOpaytest/blob/master/displayUsers.php
-11.Describe how you would design an auto-scaling setup in AWS to handle a PHP application with fluctuating traffic. What services and features would you use, and provide a high-level architecture diagram if possible.
-Prerequisite:
-AWS Account: Have an active AWS account that allows you to access and manage AWS services.
-Have a basic understanding of Amazon EC2 (Elastic Compute Cloud) instances, including how to launch and manage them.
-Have knowledge about AWS Availability Zones, which are distinct physical locations within an AWS Region designed to provide high availability and fault tolerance.
-Steps:
-Step 1: Sign into the AWS console
-Step 2: Search and select EC2
-Step 3: Create an Auto Scaling Group 
-Step 5: Create a Launch Template
-Step 6: Customize the Launch Template
+## 10.Using PHP, make a GET request to a sample REST API (e.g., JSONPlaceholder) to retrieve a list of users. Parse the JSON response and display the user's name and email address.
+  - https://github.com/JosephKithome/DPOpaytest/blob/master/displayUsers.php
+  - 
+## 11.Describe how you would design an auto-scaling setup in AWS to handle a PHP application with fluctuating traffic. What services and features would you use, and provide a high-level architecture diagram if possible.
+   ### Prerequisite:
+    - AWS Account: Have an active AWS account that allows you to access and manage AWS services.
+    - Have a basic understanding of Amazon EC2 (Elastic Compute Cloud) instances, including how to launch and manage them.
+    - Have knowledge about AWS Availability Zones, which are distinct physical locations within an AWS Region designed to provide high availability and fault tolerance.
+
+## Steps:
+  - Step 1: Sign into the AWS console
+  - Step 2: Search and select EC2
+  - Step 3: Create an Auto Scaling Group 
+  - Step 5: Create a Launch Template
+  - Step 6: Customize the Launch Template
+    
 -	Select an AMI image for your EC2 instance and choose an instance type. Create a security group to control inbound and outbound traffic.
 Step 7: Return to Auto Scaling Group Creation
 Go back to the previous tab and click the refresh button. Select the launch template you just created. Then click next.
