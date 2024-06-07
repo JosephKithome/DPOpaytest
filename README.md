@@ -559,9 +559,9 @@ echo "Finished processing all messages.\n";
 
 ## 13.Write a PHP script that serializes a large data structure (e.g., an array or object), compresses it, saves it to a file, and then unserializes and decompresses the data from the file. You can use standard PHP functions for serialization and a compression library like zlib to achieve this.
 https://github.com/JosephKithome/DPOpaytest/blob/master/compressor.php
-DataProcessor Class:
-The class DataProcessor is created to handle data processing and retrieval.
-The constructor accepts the file path where the compressed data will be saved.
+ - DataProcessor Class:
+    -The class DataProcessor is created to handle data processing and retrieval.
+    -The constructor accepts the file path where the compressed data will be saved.
  - processData Method:
      -	Creates a large data structure.
      -	Serializes and compresses the data.
