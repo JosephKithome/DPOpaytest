@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$client_id = 'XXXXXXXXXXX';
+$client_id = 'Ov23liTc7gTpOubx2haI';
 $redirect_uri = 'http://localhost/PHP/oauth/callback.php';
 $scope = 'read:user user:email';
 $state = bin2hex(random_bytes(8)); 

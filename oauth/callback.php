@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-$client_id = 'XXXXXXXXXXXXXXXX';
-$client_secret = 'YYYYYYYYYY';
+$client_id = 'Ov23liTc7gTpOubx2haI';
+$client_secret = '7a1f662c997f92e9c11b41cf3de663b811d179dc';
 $redirect_uri = 'http://localhost/PHP/oauth/callback.php';
 
 if (!isset($_GET['code']) || !isset($_GET['state']) || $_GET['state'] !== $_SESSION['oauth2_state']) {
