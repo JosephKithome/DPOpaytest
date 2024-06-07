@@ -31,7 +31,7 @@ Polymorphism: The word polymorphism means having many forms. In simple words, we
  Abstraction: Data abstraction is one of the most essential and important features of object-oriented programming. Data abstraction refers to providing only essential information about the data to the outside world, hiding the background details or implementation. Consider a real-life example of a man driving a car. The man only knows that pressing the accelerators will increase the speed of the car or applying brakes will stop the car, but he does not know about how on pressing the accelerator the speed is increasing, he does not know about the inner mechanism of the car or the implementation of the accelerator, brakes, etc. in the car. This is what abstraction is.
 Defining a Class and Creating Objects:
 https://github.com/JosephKithome/DPOpaytest/blob/master/index.php
---- <?php
+``` <?php
 class Candidate {
   // Properties
   public $first_name;
@@ -88,13 +88,13 @@ echo "<br>";
 // Kithome
 // josephkithome.jmk@gmail.com
 // 254717064174
-
+```
  3. Explain the purpose of exception handling in PHP. How do you catch and handle exceptions in your code? Provide an example of how you would use try-catch blocks.
 Purpose:
 Exception handling allows you to manage errors gracefully, ensuring the program can handle unexpected conditions without crashing.
 Try-Catch Example:
 https://github.com/JosephKithome/DPOpaytest/blob/master/exception.php
---- <?php
+``` <?php
 class Candidate {
   // Properties
   public $first_name;
@@ -164,9 +164,8 @@ try {
 } catch (Exception $e) {
   echo 'Caught exception: ',  $e->getMessage(), "<br>";
 }
---- ?>
-
-
+ ?>
+```
 4. Discuss different methods for connecting to a database in PHP. Describe the differences between MySQLi and PDO. Provide an example of how to perform a basic database query using one of these methods.
 MySQLi vs. PDO:
 MySQLi: MySQL Improved extension, supports procedural and object-oriented programming and only works with MySQL databases.
@@ -174,7 +173,7 @@ PDO:  PHP Data Objects, supports multiple databases (MySQL, PostgreSQL, SQLite, 
 
 Example using PDO:
 https://github.com/JosephKithome/DPOpaytest/blob/master/Pdo.php
---- <?php
+``` <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -198,7 +197,8 @@ try {
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }
---- ?>
+ ?>
+```
 
 
 
@@ -210,7 +210,7 @@ try {
 5. How would you protect a PHP application from common security vulnerabilities such as SQL injection and cross-site scripting (XSS)? Provide code examples or best practices for mitigating these threats.
 -Use prepared statements with parameterized queries to prevent SQL Injection.
 https://github.com/JosephKithome/DPOpaytest/blob/master/Preparedstmt.php
---- <?php
+``` <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -237,18 +237,20 @@ try {
 } catch(PDOException $e) {
   echo "Connection failed: " . $e->getMessage();
 }
---- ?>
+?>
+```
 
 
 - Sanitize user inputs and escape outputs to prevent Cross-Site Scripting (XSS).
 https://github.com/JosephKithome/DPOpaytest/blob/master/index.php
 // Setter Methods
- --- function set_first_name($first_name) {
+``` function set_first_name($first_name) {
     
     echo htmlspecialchars($first_name(), ENT_QUOTES, 'UTF-8');
 
     $this->first_name = $first_name;
-  --- }
+  }
+  ```
   
 
 
@@ -275,7 +277,7 @@ Importance:
 Infrastructure as code (IaC) is the ability to provision and support your computing infrastructure using code instead of manual processes and settings.
 Example using Terraform
 https://github.com/JosephKithome/DPOpaytest/blob/master/terraform/main.tf
---- terraform {
+``` terraform {
   required_providers {
     aws ={
         source = "hashicorp/aws"
@@ -308,11 +310,12 @@ resource "aws_budgets_budget" "like-and-subscribe" {
     time_period_start = "2024-06-07"
     time_period_end = "2024-06-30"
     
---- }
+ }
+```
 
 8. Write a PHP function that takes an array of integers and returns the sum of all even numbers in the array.
 https://github.com/JosephKithome/DPOpaytest/blob/master/SumEvenNumbers.php
---- <?php
+``` <?php
 class Calculator {
 
   public array $arr;
@@ -340,12 +343,13 @@ if ($result !== null) {
   echo "Sum of even numbers: " . $result;
   echo "<br>";
 }
---- ?>
+ ?>
+```
 
 
  9. Create a PHP script that reads a text file, counts the number of words in the file, and displays the result. Ensure that your code handles file open and read errors gracefully.
 https://github.com/JosephKithome/DPOpaytest/blob/master/countWordsInFile.php
----
+```
 <?php
 class WordCounter {
 
@@ -368,7 +372,8 @@ class WordCounter {
 
 $counter = new WordCounter();
 echo $counter->countWordsInFile('words.txt');
---- ?>
+ ?>
+```
 
 
 10.Using PHP, make a GET request to a sample REST API (e.g., JSONPlaceholder) to retrieve a list of users. Parse the JSON response and display the user's name and email address.
