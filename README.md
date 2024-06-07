@@ -443,11 +443,107 @@ Ensure RabbitMQ is installed and running. You can download RabbitMQ from the off
 
 4. Create a Producer Script;
 https://github.com/JosephKithome/DPOpaytest/blob/master/advanced/producer.php
-5. Create a consumer(Worker) script
+```
+<?php
+require_once  '../vendor/autoload.php';
+
+use PhpAmqpLib\Connection\AMQPStreamConnection;
+use PhpAmqpLib\Message\AMQPMessage;
+
+class EmailProducer {
+    private $connection;
+    private $channel;
+
+    public function __construct() {
+        $this->connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
+        $this->channel = $this->connection->channel();
+        $this->channel->queue_declare('email_queue', false, false, false, false);
+    }
+
+    public function sendEmailRequest($emailData) {
+        $msg = new AMQPMessage(json_encode($emailData));
+        $this->channel->basic_publish($msg, '', 'email_queue');
+        echo " [x] Sent email request\n\n";
+    }
+
+    public function __destruct() {
+        $this->channel->close();
+        $this->connection->close();
+    }
+}
+
+$producer = new EmailProducer();
+$emailData = [
+    'to' => 'josephKithome@example.com',
+    'subject' => 'PHP Developer Test',
+    'body' => 'HI Joseph, Finish the test and revert by friday..'
+];
+$producer->sendEmailRequest($emailData);
+
+```
+
+6. Create a consumer(Worker) script
 https://github.com/JosephKithome/DPOpaytest/blob/master/advanced/consumer.php
-6. Run the following scripts to test:
+```
+<?php
+require_once '../vendor/autoload.php';
+
+use PhpAmqpLib\Connection\AMQPStreamConnection;
+use PhpAmqpLib\Message\AMQPMessage;
+
+class EmailConsumer {
+    private $connection;
+    private $channel;
+    private $messageCount;
+
+    public function __construct() {
+        $this->connection = new AMQPStreamConnection('localhost', 5672, 'guest', 'guest');
+        $this->channel = $this->connection->channel();
+        list(, $this->messageCount, ) = $this->channel->queue_declare('email_queue', true);
+        $this->channel->queue_declare('email_queue', false, false, false, false);
+    }
+
+    public function processEmails() {
+        $callback = function($msg) {
+            $emailData = json_decode($msg->body, true);
+            $this->sendEmail($emailData);
+            echo "Consumed message: " . $msg->body . "\n"; 
+            $this->messageCount--;
+
+            if ($this->messageCount == 0) {
+                $this->channel->basic_cancel($msg->delivery_info['consumer_tag']);
+            }
+        };
+
+        $this->channel->basic_consume('email_queue', '', false, true, false, false, $callback);
+
+        while ($this->messageCount > 0 && $this->channel->is_consuming()) {
+            $this->channel->wait();
+        }
+    }
+
+    private function sendEmail($emailData) {
+        // Simulate email sending
+        echo "Sending email to: " . $emailData['to'] . "\n";
+        echo "Subject: " . $emailData['subject'] . "\n";
+        echo "Body: " . $emailData['body'] . "\n";
+    }
+
+    public function __destruct() {
+        $this->channel->close();
+        $this->connection->close();
+    }
+}
+
+$consumer = new EmailConsumer();
+$consumer->processEmails();
+echo "Finished processing all messages.\n";
+?>
+``
+
+8. Run the following scripts to test:
        -      php producer.php
--	php consumer.php
+       -      php consumer.php
 
 13.Write a PHP script that serializes a large data structure (e.g., an array or object), compresses it, saves it to a file, and then unserializes and decompresses the data from the file. You can use standard PHP functions for serialization and a compression library like zlib to achieve this.
 https://github.com/JosephKithome/DPOpaytest/blob/master/compressor.php
